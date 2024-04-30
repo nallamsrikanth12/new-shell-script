@@ -13,8 +13,6 @@ if [ $AVALIABLE_USAGE -ge $MEM_THRESHOLD]
 then
     echo "$AVALIALE_USAGE is more than $MEM_THRESHOLD and total memory is $TOTAL_MEMORY_USAGE mb"
 
-    #sleep for 1 second
-    sleep 1
  fi   
 
 done
