@@ -6,7 +6,7 @@ MEM_THRESHOLD=200
 
 
 while 
-do 
+do
   AVALIABLE_USAGE=$(free -m |awk '/Mem/{print $3}')
   echo "system avabile memory is $AVALIABLE_USAGE mb"
 if [ $AVALIABLE_USAGE -ge $MEM_THRESHOLD]
