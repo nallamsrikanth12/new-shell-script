@@ -16,6 +16,13 @@ fi
 
 FILES=$( find $SOURCE_DIRECTORY -name "*.log" -mtime +14 ) 
 
+# Function to display memory usage
+show_memory_usage() {
+    echo "Memory Usage:"
+    free -h
+}
+
+
 while IFS= read -r line
 do 
   echo " $line :deleting files"
@@ -23,9 +30,4 @@ do
 done <<< $FILES
 
 
-# Function to display memory usage
-show_memory_usage() {
-    echo "Memory Usage:"
-    free -h
-}
 
