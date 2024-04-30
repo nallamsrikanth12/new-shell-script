@@ -1,5 +1,7 @@
 SOURCE_DIRECTORY=/tmp/app-logs
 
+THRESHOLD_PERCENTAGE=90
+
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
@@ -20,7 +22,6 @@ do
   rm -rf $line
 done <<< $FILES
 
-#!/bin/bash
 
 # Function to display memory usage
 show_memory_usage() {
@@ -28,10 +29,3 @@ show_memory_usage() {
     free -h
 }
 
-# Main loop to continuously display memory usage every 5 seconds
-while true
-do
-    clear  # Clear the screen before displaying memory usage
-    show_memory_usage
-    sleep 5  # Wait for 5 seconds before checking again
-done
