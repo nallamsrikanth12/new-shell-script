@@ -1,6 +1,6 @@
 #!/bin/bash
 MEM=$(free -m)
-TOTAL_MEMORY_USAGE=$(free -m |awk '/Mem/{print $2}' )
+
 
 MEM_THRESHOLD=200
 
