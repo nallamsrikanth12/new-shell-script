@@ -12,7 +12,7 @@ else
     echo -e "directory is not found"
 fi
 
-FILES=( find $SOURCE_DIRECTORY -name "*.log" -mtime +14 ) 
+FILES=$( find $SOURCE_DIRECTORY -name "*.log" -mtime +14 ) 
 
 while IFS= read -r line
 do 
