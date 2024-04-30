@@ -5,7 +5,7 @@ TOTAL_MEMORY_USAGE=$(free -m |awk '/Mem/{print $2}' )
 MEM_THRESHOLD=200
 
 
-while 
+while  :
 do
   AVALIABLE_USAGE=$(free -m |awk '/Mem/{print $3}')
   echo "system avabile memory is $AVALIABLE_USAGE mb"
