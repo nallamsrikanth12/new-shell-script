@@ -25,8 +25,9 @@ do
     clear  # Clear the screen before displaying memory usage
     show_memory_usage
 
-    if [ "$(echo "$MEMORY_USAGE >= $THRESHOLD_PERCENTAGE" | bc)" -eq 1 ]; then
-        send_email_alert
+    if [ "$(echo "$MEMORY_USAGE >= $THRESHOLD_PERCENTAGE" | bc)" -eq 1 ] 
+    then
+        echo "send_email_alert"   
     fi
 
     sleep 300  # Wait for 5 minutes before checking again (300 seconds)
