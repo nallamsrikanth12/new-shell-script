@@ -1,8 +1,7 @@
 #!/bin/bash
 MEM=$(free -m)
-
-
 MEM_THRESHOLD=200
+MESSAGE=""
 
 
 while  IFS= read -r line
@@ -11,8 +10,10 @@ do
   AVALIABLE_USAGE=$(echo $line | free -m |awk '/Mem/{print $3}')
 if [ $AVALIABLE_USAGE -ge $MEM_THRESHOLD ]
 then
-    echo "$AVALIALE_USAGE is more than $MEM_THRESHOLD and total memory is $TOTAL_MEMORY_USAGE mb"
+    MESSAGE+= "$AVALIALE_USAGE is more than $MEM_THRESHOLD and total memory is $TOTAL_MEMORY_USAGE mb \n"
 
 fi   
 
 done <<< $MEM
+
+echo -e "message :$MESSAGE"
